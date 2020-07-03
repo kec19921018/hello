@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>帮助中心详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body style="height: 100%;overflow: hidden;">
+		<div class="warp">
+			<header class="page" style="background-color: #fff;">
+				<div class="back fl" onclick="javascript:window.history.back(-1)"><i class="iconfont icon-you"></i></div>
+				<div class="back fr"><i class="iconfont icon-fenxiang"></i></div>
+			</header>
+			<div class="help-detail marginTop">
+				<div class="help-detailTitle">GRD的收益变化提示</div>
+				<div class="help-detailTime">2020-6-22 16:14:49</div>
+				<div class="help-detailText">
+					<p>尊敬的用户，</p>
+					<p>　　内容</p>
+					<p class="text-right">IPFSER云矿池</p>
+					<p class="text-right">2020年6月22日</p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+		<script>
+			$(function(){
+				// $('.set-passwordInput').keyup(function(){
+				// 	var _this = $(this);
+				// 	if(_this.length > 0){
+				// 		$('.show-pw').show()
+				// 	}
+				// })
+				$('.show-pw').click(function(){
+					var inputType = $('.set-passwordInput').attr('type');
+					if(inputType == 'password'){
+						$('.set-passwordInput').attr('type','text')
+						$(this).text('隐藏');
+						$('.set-passwordInput').focus()
+					}
+					if(inputType == 'text'){
+						$('.set-passwordInput').attr('type','password')
+						$(this).text('显示');
+						$('.set-passwordInput').focus()
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

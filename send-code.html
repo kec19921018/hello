@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>输入验证码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body style="height: 100%;overflow: hidden;">
+		<div class="warp">
+			<header class="page" style="background-color: #fff;">
+				<div class="back fl" onclick="javascript:window.history.back(-1)"><i class="iconfont icon-you"></i></div>
+				<div class="page-name" style="color: #111;">输入验证码</div>
+			</header>
+			<div class="set-password marginTop">
+				<div class="set-passwordTip">我们已向159269111917发送验证码短信，请查看短信并输入验证码</div>
+				<div class="find-pw">
+					<input type="number" class="code-input" id="code-input1" name="" maxlength="1" />
+					<input type="number" class="code-input" id="code-input2" name="" />
+					<input type="number" class="code-input" id="code-input3" name="" />
+					<input type="number" class="code-input" id="code-input4" name="" />
+				</div>
+				<div class="red tip"></div>
+				<div class="send-again">
+					<a href="##">重新发送</a>
+				</div>
+			</div>
+		</div>
+		<style type="text/css">
+			.tip {
+				font-size: 14px;
+				padding: 0px 20px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var inputH = $('.find-pw input').width();
+				$('.find-pw input').css({
+					'height': inputH + 'px'
+				});
+			})
+			$(function() {
+				var ww = 2222; //服务器验证码
+				$('.code-input').eq(0).focus();
+				$('.code-input').keyup(function() {
+					if ($(this).val().length == 1) {
+						$(this).next().focus()
+					}
+				})
+				$('.code-input').eq($('.code-input').length - 1).keyup(function() {
+					var valed = ''
+					for (var i = 0; i < $('.code-input').length; i++) {
+						valed = valed + $('.code-input').eq(i).val()
+					}
+					if (Number(valed) == ww) {
+						//window.location.href='./me.html'
+						alert('密码正确')
+						$('.code-input').val('');
+						$('.code-input').eq(0).focus();
+						$('.tip').text('验证通过！')
+					} else {
+						$('.code-input').val('');
+						$('.code-input').eq(0).focus();
+						$('.tip').text('*验证码不正确，请重新输入！')
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

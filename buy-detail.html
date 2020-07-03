@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body style="background-color: #fafafa;">
+		<div class="warp">
+			<header class="page" style="background-color: #fff;">
+				<div class="back fl" onclick="javascript:window.history.back(-1)"><i class="iconfont icon-you"></i></div>
+				<div class="page-name" style="color: #111;">订单详情</div>
+			</header>
+			<div class="buy marginTop">
+				<div class="address">
+					<div class="add-address"><span>+ 增加收货地址</span></div>
+					<div class="address-box">
+						<div class="address-boxTop">
+							<span>柯诚</span>
+							<span class="xg">修改</span>
+						</div>
+						<div class="address-boxBottom">
+							<span>15926911917</span>
+							<span>湖北省黄石市</span>
+						</div>
+					</div>
+				</div>
+				<div class="buy-list">
+					<div class="text">订单编号</div>
+					<div class="buy-listDetail">123456789</div>
+				</div>
+				<div class="buy-list">
+					<div class="buy-goods">
+						<div class="buy-goodsImg"><img src="./images/mall1.jpg" ></div>
+						<div class="buy-goodsName"><span>小米电视4A 65英寸</span><p>数量：2</p></div>
+						<div class="need-jf"><span>花费积分</span><p>5980.00</p></div>
+					</div>
+					<div class="buy-goods">
+						<div class="buy-goodsImg"><img src="./images/mall1.jpg" ></div>
+						<div class="buy-goodsName"><span>小米电视4A 65英寸</span><p>数量：2</p></div>
+						<div class="need-jf"><span>花费积分</span><p>5980.00</p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submit-order">
+			<span>合计：<label>9999积分</label></span>
+			<a href="##" class="submit-orderBtn">提交订单</a>
+		</div>
+		<div class="address-modal">
+			<div class="address-modalBox">
+				<div class="text address-modalText">添加地址</div><br />
+				<div class="address-modalList">
+					<span>姓名</span>
+					<input type="text" name="" id="name" value="" placeholder="请输入收货人姓名" />
+				</div>
+				<div class="address-modalList">
+					<span>联系方式</span>
+					<input type="tel" name="" id="tel" value="" placeholder="请输入收货人联系方式" />
+				</div>
+				<div class="address-modalList">
+					<span>详细地址</span>
+					<input type="text" name="" id="address" value="" placeholder="请输入收货地址" />
+				</div>
+				<div class="address-modalBtn">
+					<a href="##" class="address-save">保存</a><br />
+					<a href="##" class="address-exit">取消</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.add-address span').click(function(){
+					$('.address-modal').show();
+					$('.address-modalText').text('添加地址')
+					$('.address-modalList #name').val('')
+					$('.address-modalList #tel').val('')
+					$('.address-modalList #address').val('')
+				})
+				$('.xg').click(function(){
+					var name = $(this).siblings('span').text()
+					var tel = $(this).parent('.address-boxTop').siblings('.address-boxBottom').find('span').eq(0).text()
+					var address = $(this).parent('.address-boxTop').siblings('.address-boxBottom').find('span').eq(1).text()
+					$('.address-modal').show();
+					$('.address-modalText').text('修改地址')
+					$('.address-modalList #name').val(name)
+					$('.address-modalList #tel').val(tel)
+					$('.address-modalList #address').val(address)
+				})
+				$('.address-exit').click(function(){
+					$('.address-modal').hide()
+				})
+			})
+		</script>
+	</body>
+</html>

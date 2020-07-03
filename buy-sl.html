@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>90天BTC算力合约新1期</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body style="background-color: #fafafa;">
+		<div class="warp">
+			<header class="page" style="background-color: #fff;">
+				<div class="back fl" onclick="javascript:window.history.back(-1)"><i class="iconfont icon-you"></i></div>
+				<div class="page-name" style="color: #111;">90天BTC算力合约新1期</div>
+			</header>
+			<div class="buy-sl marginTop">
+				<div class="buy-slBan"><img width="100%" src="./images/sl.jpg" alt=""></div>
+				<div class="buy-slTitle">
+					<div class="sl-name">90天BTC算力合约新1期</div>
+					<div class="sl-label">
+						<span>包含电费</span>
+						<span>90天周期</span>
+						<span>已售罄</span>
+					</div>
+				</div><br>
+				<div class="sl-detail">
+					<div class="sl-detailList">
+						<span>算力价格</span>
+						<label class="orange">$ 0.1584/T/天</label>
+					</div>
+					<div class="sl-detailList">
+						<span>管理费</span>
+						<label class="orange">0% <i>6%</i></label>
+					</div>
+					<div class="sl-detailList">
+						<span>电费</span>
+						<label class="orange">已包含</label>
+					</div>
+					<div class="sl-detailList">
+						<span>产品周期</span>
+						<label class="orange">有效期90天</label>
+					</div>
+					<div class="sl-detailList">
+						<span>预计美每日产出</span>
+						<label class="orange">0.00000797 BTC</label>
+					</div>
+					<div class="sl-detailList">
+						<span>查看产品详情</span>
+						<i class="iconfont icon-you"></i>
+					</div>
+				</div><br>
+				<div class="buy-slNum">
+					<div class="buy-slNumbox">
+						<span class="text">买入数量(THS)</span>
+						<div class="buy-slNumbox2">
+							<span class="reduce" onclick="reduce()">-</span>
+							<input type="tel" name="" id="" class="sl-num" value="10" />
+							<span class="add" onclick="add()">+</span>
+						</div>
+					</div>
+					<div class="buy-slNumboxTetx">您当前90天BTC算力合约新1期持仓总量为0T，还可购买55T。</div>
+				</div>
+				<br>
+				<div class="sl-detail">
+					<div class="sl-detailList">
+						<span>算力到账日期</span>
+						<label>2020-06-28</label>
+					</div>
+					<div class="sl-detailList">
+						<span>收益到账日期</span>
+						<label>2020-06-30</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divHeight"></div>
+		<div class="submit-order">
+			<span>合计：<label>142.56 USDT</label></span>
+			<a href="./pay-sl.html" class="submit-orderBtn">立即买入</a>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+		<script type="text/javascript">
+			function add(){	
+				var multi = 10;
+				var n = $('.sl-num').val();
+				n++;
+				if(n >= multi){
+					$('.sl-num').val(n++)
+				}else{
+					return;
+				}
+			}
+			function reduce(){	
+				var multi = 10;
+				var n = $('.sl-num').val();
+				n--;
+				if(n >= multi){
+					$('.sl-num').val(n++)
+				}else{
+					return;
+				}
+			}
+		</script>
+	</body>
+</html>

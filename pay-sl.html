@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>订单支付</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body style="background-color: #fafafa;">
+		<div class="warp">
+			<header class="page" style="background-color: #fff;">
+				<div class="back fl" onclick="javascript:window.history.back(-1)"><i class="iconfont icon-you"></i></div>
+				<div class="page-name" style="color: #111;">订单支付</div>
+			</header>
+			<div class="pay-sl marginTop">
+				<div class="my-teamBox pay-slBox1">
+					<div class="my-teamBoxL">
+						<div class="team-img"><img src="./images/investment.png"></div>
+						<div class="team-detail">
+							<span>90天BTC算力合约新1期</span>
+							<p>45.90 USDT/T <b class="red">    X2T</b></p>
+						</div>
+					</div>
+				</div>
+				<div class="sl-detail">
+					<div class="sl-detailList">
+						<span>订单总价</span>
+						<label>45.90USDT</label>
+					</div>
+					<div class="sl-detailList">
+						<span>订单编号</span>
+						<label class="orange">123465789</label>
+					</div>
+				</div><br>
+				<div class="sl-detail">
+					<div class="sl-detailList">
+						<span>使用优惠券</span>
+						<span>不使用优惠券<i class="iconfont icon-you"></i></span>
+					</div>
+				</div><br>
+				<div class="pay-way">
+					<div class="text">支付方式选择</div>
+					<div class="pay-wayList">
+						<ul>
+							<li id="zfb"><img src="./images/zfb.png" ><span>支付宝支付</span></li>
+							<li id="brought"><img src="./images/yue.png" ><span>对公账户支付</span></li>
+							<!-- <li><img src="./images/usdt.png" ><span>USDT支付</span></li>
+							<li><img src="./images/hbt.png" ><span>HBT支付</span></li>
+							<li><img src="./images/yue.png" ><span>余额支付</span></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divHeight"></div>
+		<div class="submit-order">
+			<span>共1件，合计：<label>323.59元</label></span>
+			<a href="./scancode-pay.html" class="submit-orderBtn">立即支付</a>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var way = 0;
+				$('.pay-wayList li').eq(way).addClass('active')
+				$('.pay-wayList li').click(function(){
+					$(this).addClass('active').siblings('li').removeClass('active')
+				})
+			})
+			$('.submit-orderBtn').click(function(){
+				if($('#zfb').hasClass('active')){
+					$(this).attr('href','scancode-pay.html')
+				}
+				if($('#brought').hasClass('active')){
+					$(this).attr('href','brought-pay.html')
+				}
+			})
+		</script>
+	</body>
+</html>
